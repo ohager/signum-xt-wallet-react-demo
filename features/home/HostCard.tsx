@@ -13,13 +13,13 @@ export const HostCard: FC<Props> = ({url}) => {
 
     return (
         <div style={{flexDirection: 'column'}}>
-            <p className={styles.card}>
+            <div className={styles.card}>
                 <div style={{flexDirection: 'row'}}>
 
                     <small className={styles.badge}>{data?.networkName}</small>
                     <code className={styles.code}>{url}</code>
                 </div>
-            </p>
+            </div>
             {Ledger.Network !== data?.networkName &&
               <small className={styles.error}>This DApp does not operate on this network</small>
             }

@@ -31,12 +31,12 @@ export const AccountCard: FC<Props> = ({publicKey}) => {
 
 
     return address && (
-        <p className={styles.card}>
+        <div className={styles.card}>
             <div className={styles.account}>
                 <img src={iconUrl} alt={`account-${address.getNumericId()}`}/>
                 <code className={styles.code}>{address.getReedSolomonAddress()}</code>
             </div>
-        </p>
+        </div>
     )
 
 }
