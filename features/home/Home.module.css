@@ -161,3 +161,17 @@
   margin: 0.5rem;
   width: 100%;
 }
+
+.link {
+  margin: 0.5rem;
+  color: #0099ff;
+  text-decoration: underline dotted;
+  cursor: pointer;
+  font-size: medium;
+  filter: saturate(0.8);
+}
+
+.link:hover {
+  filter: saturate(1);
+  transition: filter ease-in-out 250ms;
+}

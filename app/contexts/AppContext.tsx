@@ -14,6 +14,7 @@ export interface AppContextType {
   Ledger: {
     IsTestnet: boolean;
     Network: string;
+    Explorer: string;
   };
 }
 
@@ -27,6 +28,7 @@ const config: AppContextType = {
   Ledger: {
     IsTestnet: Config.Ledger.IsTestnet,
     Network: Config.Ledger.Network,
+    Explorer: Config.Ledger.Explorer,
   },
 };
 

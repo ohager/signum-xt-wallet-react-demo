@@ -5,5 +5,6 @@ export const Config = {
   Ledger: {
     IsTestnet: toBoolean(process.env.NEXT_PUBLIC_SIGNUM_IS_TESTNET || "false"),
     Network: process.env.NEXT_PUBLIC_SIGNUM_NETWORK || "Signum-TESTNET",
+    Explorer: process.env.NEXT_PUBLIC_SIGNUM_EXPLORER || "https://t-chain.signum.network",
   },
 };

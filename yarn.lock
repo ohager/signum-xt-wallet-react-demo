@@ -149,27 +149,27 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
 
-"@signumjs/contracts@^1.0.0-rc.15":
-  version "1.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/@signumjs/contracts/-/contracts-1.0.0-rc.15.tgz#b353084b8a4aa065e62b6b3ceacd2bfa4c1e3e95"
-  integrity sha512-NTC6xpfwngJyPNXroTRNux6HeCgv+ow7JYNFAXjKdhBdGk7uvFSc7wrkxIBYIV1yvS1TGkwbJ4PjNW5/99Gpcw==
+"@signumjs/contracts@^1.0.0-rc.16":
+  version "1.0.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@signumjs/contracts/-/contracts-1.0.0-rc.16.tgz#8d265b347ed63c7186368cf5634c0cec9c5a4a3b"
+  integrity sha512-6fAP1twjZbhTH59YI2crdkNWvRbIklrz8qzJhg+U3Q1KxWPBIAAgfTez+Khp5bHUXCLJi1AQ4RyObuwAXbW8jg==
   dependencies:
-    "@signumjs/util" "^1.0.0-rc.15"
+    "@signumjs/util" "^1.0.0-rc.16"
 
-"@signumjs/core@^1.0.0-rc.15":
-  version "1.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/@signumjs/core/-/core-1.0.0-rc.15.tgz#ba3b9c48d8fe077830093aca20f6ef8f242b1d38"
-  integrity sha512-xy7dQd3Ux0kvoGa8LZwodfLO/kINC6oXeoLPMYFu1Wr0NlZoFSXf6pOsvfjVWI+xgvtfYR4t+6v1d1b35MCR/g==
+"@signumjs/core@^1.0.0-rc.16":
+  version "1.0.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@signumjs/core/-/core-1.0.0-rc.16.tgz#0ebf74bd522d73d925787198a9e7bbd34c513ecb"
+  integrity sha512-4HvYhG3lVu6edrvllpqCsYPbgasbQSnrfWMJOZREo2J86z+clS1aE6zLRzqusGmcIE6AYnjFhdM30nlO/wwbdQ==
   dependencies:
-    "@signumjs/contracts" "^1.0.0-rc.15"
-    "@signumjs/crypto" "^1.0.0-rc.15"
-    "@signumjs/http" "^1.0.0-rc.15"
-    "@signumjs/util" "^1.0.0-rc.15"
+    "@signumjs/contracts" "^1.0.0-rc.16"
+    "@signumjs/crypto" "^1.0.0-rc.16"
+    "@signumjs/http" "^1.0.0-rc.16"
+    "@signumjs/util" "^1.0.0-rc.16"
 
-"@signumjs/crypto@^1.0.0-rc.15":
-  version "1.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/@signumjs/crypto/-/crypto-1.0.0-rc.15.tgz#f9d77b864d18c497007d348d2f1ea0fe0d84768e"
-  integrity sha512-c9tYtoKCBUrG4M0/5n60IQaBbeL3ahU5Tus5PQZMyhB7ah8n0fMmR8a9ouswobWEn42aoeJdVLWQWD1Qc3+gvw==
+"@signumjs/crypto@^1.0.0-rc.16":
+  version "1.0.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@signumjs/crypto/-/crypto-1.0.0-rc.16.tgz#0ad64c40d06e0e803e689691347ba15e17932e10"
+  integrity sha512-cus28Nb305b0QWkS9Uo7SVZ6XftcoLdKT0TLysr4pnKWOHPGuhy7CoCoF8Z7+fUNJXo0eCo7zM2dbjnH8ZfLlA==
   dependencies:
     "@types/crypto-js" "^3.1.43"
     "@types/node" "^12.0.0"
@@ -179,27 +179,27 @@
     pako "^1.0.10"
     seedrandom "^3.0.5"
 
-"@signumjs/http@^1.0.0-rc.15":
-  version "1.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/@signumjs/http/-/http-1.0.0-rc.15.tgz#45a8dd4c7cf75643c99d34d7efa37b2d7d4e4b47"
-  integrity sha512-Id+Og6C92zUiQnP55W0mJATTqV1efU7oaHaa22hHYPjIvULzuWweJDAKcMCqHCd/mZO8QA5py/CBVMD58mZzAg==
+"@signumjs/http@^1.0.0-rc.16":
+  version "1.0.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@signumjs/http/-/http-1.0.0-rc.16.tgz#10484f8de46c678c0be070db1c24a4566a250a0c"
+  integrity sha512-NeW6Mpycqjlgpnd7bjsImCZivIstKxmKQ4jLqpRIryWL83A4uu5iwSOSnsqJENhNw2zMy3Sr9K9711YpMtNx0w==
   dependencies:
     axios "^0.21.4"
 
-"@signumjs/util@^1.0.0-rc.15":
-  version "1.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/@signumjs/util/-/util-1.0.0-rc.15.tgz#03c7b3af7718ba429c511f28d8f3dd1c37affa4d"
-  integrity sha512-Om4RGG937Jf5K96nAJpPPP77TSwqKTfVJFAa5d1k51hw68M0WIfZ1A5UCGofeGeKOSFXYlVXSj0ABHNS4SOGow==
+"@signumjs/util@^1.0.0-rc.16":
+  version "1.0.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@signumjs/util/-/util-1.0.0-rc.16.tgz#d0577ca66b1b9b001ee7615a367968cd47fd6314"
+  integrity sha512-xgIsvIucdjpy1VUzELVGfIzi0GVVhFBxxI+QDtgPRpvIEwhbBUPmUCkw5XmkllQSkGicOlFsDo1/j3/nH6OzFw==
   dependencies:
     bignumber.js "^9.0.0"
     js-base64 "^3.6.0"
 
-"@signumjs/wallets@^1.0.0-rc.15":
-  version "1.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/@signumjs/wallets/-/wallets-1.0.0-rc.15.tgz#be3d246ae777859579f8e589ccd94979650135c6"
-  integrity sha512-Tv2VmLzMeW9q4germBb7a6Llhu6LJVDbuacaM3Nmwms1lUDzQ1ah3asu4E+dHepLCgxtUVsDpBkSqyk024D8Pg==
+"@signumjs/wallets@^1.0.0-rc.16":
+  version "1.0.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@signumjs/wallets/-/wallets-1.0.0-rc.16.tgz#6f307ca71a99498d7985773f319de1f7f56eb147"
+  integrity sha512-sjleKndvJ16ih9uHUidIbWefF5ue6TW5Bw98Am8jH3Z7CenkvbdbZy2vWW9LLW+PZ9FRW/g3WV/Di6enaYch4g==
   dependencies:
-    "@signumjs/util" "^1.0.0-rc.15"
+    "@signumjs/util" "^1.0.0-rc.16"
     uuid "^8.3.2"
 
 "@types/crypto-js@^3.1.43":
