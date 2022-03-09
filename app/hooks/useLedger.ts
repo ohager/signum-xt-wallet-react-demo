@@ -1,5 +1,4 @@
 import {useMemo} from 'react';
-import {useAppContext} from '@app/hooks/useAppContext';
 import {useAppSelector} from '@app/hooks/useAppSelector';
 import {selectWalletNodeHost} from '@app/states/walletState';
 import {LedgerClientFactory} from '@signumjs/core';
