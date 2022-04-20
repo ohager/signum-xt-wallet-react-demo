@@ -8,6 +8,14 @@ It comes with a prebuilt architecture using:
 
 All the communication with the [XT wallet](https://github.com/signum-network/signum-xt-wallet)  is already implemented, such that the dev can focus on his DApp.
 
+
+----------
+
+See here the [DEMO](https://signum-xt-wallet-react-demo.vercel.app/)
+
+----------
+
+
 See how it's being used in the [Home Page](./features/home/index.tsx)
 
 ---------
