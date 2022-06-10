@@ -8,6 +8,7 @@ import {requestWalletConnection} from '@app/requestWalletConnection';
 import {AccountCard} from '@features/home/AccountCard';
 import {HostCard} from '@features/home/HostCard';
 import {SendTestMessageCard} from '@features/home/SendTestMessageCard';
+import {SendEncryptedMessageCard} from '@features/home/SendEncryptedMessageCard';
 
 export const Home: NextPage = () => {
     const {isWalletConnected, walletPublicKey, walletNodeHost} = useAppSelector(selectWalletState)
@@ -52,7 +53,12 @@ export const Home: NextPage = () => {
                 <div className={styles.grid}>
                     {walletPublicKey && <AccountCard publicKey={walletPublicKey}/>}
                     {walletNodeHost && <HostCard url={walletNodeHost}/>}
-                    {isWalletConnected && <SendTestMessageCard/>}
+                    {isWalletConnected && (
+                        <div style={{display: 'flex', flexDirection: 'row'}}>
+                            <SendTestMessageCard/>
+                            <SendEncryptedMessageCard/>
+                        </div>)
+                    }
                 </div>
             </main>
 

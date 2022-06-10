@@ -194,10 +194,9 @@
     bignumber.js "^9.0.0"
     js-base64 "^3.6.0"
 
-"@signumjs/wallets@^1.0.0-rc.17":
-  version "1.0.0-rc.17"
-  resolved "https://registry.yarnpkg.com/@signumjs/wallets/-/wallets-1.0.0-rc.17.tgz#60cdc1bdc78eac4ffa32461e6126fcc60eec5ea0"
-  integrity sha512-oR1TEvZyWjxKkpcrLwlPv5NOIybjVG4D2qdACdJTlaHI5iVkBCQVvP80D08JXBybUJu7fDXPEGyj9BRDMEinFg==
+"@signumjs/wallets@file:signumjs-wallets-1.0.0-rc.18.tgz":
+  version "1.0.0-rc.18"
+  resolved "file:signumjs-wallets-1.0.0-rc.18.tgz#a0f8e13dff7a71ca5ff0aaeb55dfc1c84c32f59a"
   dependencies:
     "@signumjs/util" "^1.0.0-rc.17"
     uuid "^8.3.2"
