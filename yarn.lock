@@ -149,27 +149,27 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
 
-"@signumjs/contracts@^1.0.0-rc.17":
-  version "1.0.0-rc.17"
-  resolved "https://registry.yarnpkg.com/@signumjs/contracts/-/contracts-1.0.0-rc.17.tgz#d08f61a0bb494b45758d5332fa6d1999965c49e7"
-  integrity sha512-dEY/KpBNqux/OC6sO/DF/G/BCRwArBoezLIraDcfO4VIFzV7s40jsv/dUgKqUcW2RLG5Ry6ZO5MeArxxm8OzQQ==
+"@signumjs/contracts@^1.0.0-rc.18":
+  version "1.0.0-rc.18"
+  resolved "https://registry.yarnpkg.com/@signumjs/contracts/-/contracts-1.0.0-rc.18.tgz#2ef1ec13a4f8e34425bddb4fa929771869c1a0f8"
+  integrity sha512-gKYK5STVoAJCK3VWqNnpjj6+GKbrNg4pMtlRsJcNdYCpm+tzFYcoLBsIfyged4NViBXNsG6eV8ztWKiiI6JwwQ==
   dependencies:
-    "@signumjs/util" "^1.0.0-rc.17"
+    "@signumjs/util" "^1.0.0-rc.18"
 
-"@signumjs/core@^1.0.0-rc.17":
-  version "1.0.0-rc.17"
-  resolved "https://registry.yarnpkg.com/@signumjs/core/-/core-1.0.0-rc.17.tgz#8c99862431dc122034824eafef53f8dabc79d1a7"
-  integrity sha512-2gMjK4rXUMGe7YMc9rotDK78OIglnIBGyhve9EN0cqvHYJrRdx74BRKhWjcxWyFfFkMI39YOYKhqO/U1tJkVyw==
+"@signumjs/core@^1.0.0-rc.18":
+  version "1.0.0-rc.18"
+  resolved "https://registry.yarnpkg.com/@signumjs/core/-/core-1.0.0-rc.18.tgz#b66636a82b160ef2c99784e2aa63cc3429d1f61b"
+  integrity sha512-P0aoec42lprOXMyqH1CDzo2obDPz12kd5fJ9n4tXX5TJMb/61EziVZV5/t+I+P6xgbl87mhxesdTYwHbJcBhNQ==
   dependencies:
-    "@signumjs/contracts" "^1.0.0-rc.17"
-    "@signumjs/crypto" "^1.0.0-rc.17"
-    "@signumjs/http" "^1.0.0-rc.17"
-    "@signumjs/util" "^1.0.0-rc.17"
+    "@signumjs/contracts" "^1.0.0-rc.18"
+    "@signumjs/crypto" "^1.0.0-rc.18"
+    "@signumjs/http" "^1.0.0-rc.18"
+    "@signumjs/util" "^1.0.0-rc.18"
 
-"@signumjs/crypto@^1.0.0-rc.17":
-  version "1.0.0-rc.17"
-  resolved "https://registry.yarnpkg.com/@signumjs/crypto/-/crypto-1.0.0-rc.17.tgz#d40ebdad05288b40b94566e9d0dab5f0ddcb0071"
-  integrity sha512-TYFe0HNa2ZnihAbQXCUoBHWSyljkU2N7QIDTE9R6gy9wL1pgf6d7E//iWReUV5nooPaOBf4ABTBWd5uII64h3g==
+"@signumjs/crypto@^1.0.0-rc.18":
+  version "1.0.0-rc.18"
+  resolved "https://registry.yarnpkg.com/@signumjs/crypto/-/crypto-1.0.0-rc.18.tgz#c2ca2db53f8e0c8e1deb2669c88f0b7ba4ccb63e"
+  integrity sha512-nycBjy28QzDQeIXXdB9UmlH3NVgdWBy/HlnMKqMXxBp6/9DLlu0FUfwAkogFKqtpSneqn6PCML7ZH6WCfkS+3A==
   dependencies:
     "@types/crypto-js" "^3.1.43"
     "@types/node" "^12.0.0"
@@ -179,26 +179,27 @@
     pako "^1.0.10"
     seedrandom "^3.0.5"
 
-"@signumjs/http@^1.0.0-rc.17":
-  version "1.0.0-rc.17"
-  resolved "https://registry.yarnpkg.com/@signumjs/http/-/http-1.0.0-rc.17.tgz#50660f4494e4f2a5bbf453a904e1176dfef307c1"
-  integrity sha512-CcaB8AW6tmOUpmhsm0VDFfSIkBg+ixkP+qB6fhHjNQ++HGJmPV8AC+ylEs8wnZE4VFh4GNzN20rET1rMfq+V4g==
+"@signumjs/http@^1.0.0-rc.18":
+  version "1.0.0-rc.18"
+  resolved "https://registry.yarnpkg.com/@signumjs/http/-/http-1.0.0-rc.18.tgz#0666759183cb3c625e014e0049abeee8c8fc7de2"
+  integrity sha512-oWnAd2Dab2ifc7hTX+GLERD/Td3cEuTfNjMTJtu6hCS93xcSA+Q9sfM7wKpHpHupPE1W6FPUDadru60cesQ7ng==
   dependencies:
     axios "^0.21.4"
 
-"@signumjs/util@^1.0.0-rc.17":
-  version "1.0.0-rc.17"
-  resolved "https://registry.yarnpkg.com/@signumjs/util/-/util-1.0.0-rc.17.tgz#a13eb1483fc8bc2d99377ae074635013132b1884"
-  integrity sha512-KK8ccLzXly9TAX6JaXGj6mJtd5qBC0rD5dlNWYvGYdk9qQUxvoVyFd6Tw8oHG7V2PbYu+bng2UzJxOPCnhxxrA==
+"@signumjs/util@^1.0.0-rc.18":
+  version "1.0.0-rc.18"
+  resolved "https://registry.yarnpkg.com/@signumjs/util/-/util-1.0.0-rc.18.tgz#be743da25f29b5a9db548b16c394f97492c48e83"
+  integrity sha512-a8eWklo3W3B/JVuMzReb4jKIPfYMrLO25ZCogfPpk8LG+Dzau4lTsh9z4VEocvJQDD41cXdqauU/Kp5CAOEm3A==
   dependencies:
     bignumber.js "^9.0.0"
     js-base64 "^3.6.0"
 
-"@signumjs/wallets@file:signumjs-wallets-1.0.0-rc.18.tgz":
+"@signumjs/wallets@^1.0.0-rc.18":
   version "1.0.0-rc.18"
-  resolved "file:signumjs-wallets-1.0.0-rc.18.tgz#a0f8e13dff7a71ca5ff0aaeb55dfc1c84c32f59a"
+  resolved "https://registry.yarnpkg.com/@signumjs/wallets/-/wallets-1.0.0-rc.18.tgz#bdbf95293695004f70a918c08a2f95556fbd730f"
+  integrity sha512-GNSR1dFtIfQLa0iWYJIHpUec94PeZUVUjks4ZXnFr0Pyxq+ZC0QX1cowFvRQUfyhBbx5SQC/YycZWw32NUKwZQ==
   dependencies:
-    "@signumjs/util" "^1.0.0-rc.17"
+    "@signumjs/util" "^1.0.0-rc.18"
     uuid "^8.3.2"
 
 "@types/crypto-js@^3.1.43":
