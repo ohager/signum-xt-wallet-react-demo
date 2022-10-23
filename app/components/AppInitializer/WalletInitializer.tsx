@@ -54,6 +54,7 @@ export const WalletInitializer = () => {
         }
 
         function handleExtensionErrors(e: ExtensionWalletError) {
+            alert(e.message)
             actions.setWalletError(e)
         }
 
@@ -74,12 +75,8 @@ export const WalletInitializer = () => {
                     onPermissionRemoved: onPermissionOrAccountRemoval,
                     onAccountRemoved: onPermissionOrAccountRemoval,
                 });
-            } catch (e) {
-                if (e instanceof ExtensionWalletError) {
-                    handleExtensionErrors(e);
-                } else {
-                    console.error(e);
-                }
+            } catch (e: any) {
+                handleExtensionErrors(e);
             }
         }
 

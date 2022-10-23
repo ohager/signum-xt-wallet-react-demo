@@ -1,6 +1,6 @@
 {
   "name": "signum-xt-wallet-react-demo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
-    "@signumjs/core": "^1.0.0-rc.17",
-    "@signumjs/util": "^1.0.0-rc.17",
-    "@signumjs/wallets": "^1.0.0-rc.17",
+    "@signumjs/core": "^1.0.0-rc.21",
+    "@signumjs/crypto": "^1.0.0-rc.21",
+    "@signumjs/util": "^1.0.0-rc.21",
+    "@signumjs/wallets": "^1.0.0-rc.21",
     "hashicon": "^0.3.0",
     "next": "12.1.0",
     "react": "17.0.2",
