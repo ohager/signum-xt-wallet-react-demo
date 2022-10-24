@@ -1,10 +1,14 @@
 import { RootState } from "@app/states/store";
-import {WalletState} from '@app/states/walletState/slice';
+import { WalletState } from "@app/states/walletState/slice";
 
-export const selectWalletState = (state: RootState): WalletState => state.wallet;
+export const selectWalletState = (state: RootState): WalletState =>
+  state.wallet;
 
 export const selectIsWalletConnected = (state: RootState): boolean =>
   state.wallet.isWalletConnected;
+
+export const selectWatchOnly = (state: RootState): boolean =>
+  state.wallet.watchOnly;
 
 export const selectWalletNodeHost = (state: RootState): string =>
   state.wallet.walletNodeHost;

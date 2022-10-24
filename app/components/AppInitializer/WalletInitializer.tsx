@@ -1,98 +1,101 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import {
-    ExtensionWalletError,
-    GenericExtensionWallet, WalletConnection,
+  ExtensionWalletError,
+  GenericExtensionWallet,
+  WalletConnection,
 } from "@signumjs/wallets";
-import {useAppContext} from '@app/hooks/useAppContext';
-import {requestWalletConnection} from '@app/requestWalletConnection';
-import {actions, selectIsWalletConnected} from "@app/states/walletState";
-import {useAppDispatch} from '@app/hooks/useAppDispatch';
-import {useAppSelector} from '@app/hooks/useAppSelector';
+import { useAppContext } from "@app/hooks/useAppContext";
+import { requestWalletConnection } from "@app/requestWalletConnection";
+import { actions, selectIsWalletConnected } from "@app/states/walletState";
+import { useAppDispatch } from "@app/hooks/useAppDispatch";
+import { useAppSelector } from "@app/hooks/useAppSelector";
 
 export const WalletInitializer = () => {
-    const dispatch = useAppDispatch();
-    const { Ledger, Wallet, DAppName } = useAppContext();
-    const isWalletConnected = useAppSelector(selectIsWalletConnected);
+  const dispatch = useAppDispatch();
+  const { Ledger, Wallet, DAppName } = useAppContext();
+  const isWalletConnected = useAppSelector(selectIsWalletConnected);
 
-    function onWalletConnected(connection: WalletConnection) {
-        dispatch(actions.setIsWalletConnected(true));
-        dispatch(actions.setWalletNodeHost(connection.currentNodeHost));
-        dispatch(actions.setWalletPublicKey(connection.publicKey || ""));
+  function onWalletConnected(connection: WalletConnection) {
+    dispatch(actions.setIsWalletConnected(true));
+    dispatch(actions.setWalletNodeHost(connection.currentNodeHost));
+    dispatch(actions.setWatchOnly(connection.watchOnly));
+    dispatch(actions.setWalletPublicKey(connection.publicKey || ""));
+  }
+
+  useEffect(() => {
+    let listener: any = null;
+
+    function handleDisconnectWallet() {
+      listener && listener.unlisten();
+      dispatch(actions.setIsWalletConnected(false));
+      dispatch(actions.setWatchOnly(false));
+      dispatch(actions.setWalletNodeHost(""));
+      dispatch(actions.setWalletPublicKey(""));
+      Wallet.Extension = new GenericExtensionWallet();
     }
 
-    useEffect(() => {
-        let listener: any = null;
-
-        function handleDisconnectWallet() {
-            listener && listener.unlisten();
-            dispatch(actions.setIsWalletConnected(false));
-            dispatch(actions.setWalletNodeHost(""));
-            dispatch(actions.setWalletPublicKey(""));
-            Wallet.Extension = new GenericExtensionWallet();
+    function onNetworkChange(args: any) {
+      dispatch(actions.setWalletNodeHost(args.networkHost));
+      if (args.networkName === Ledger.Network) {
+        if (!isWalletConnected) {
+          requestWalletConnection();
         }
+      } else {
+        alert("Wallet changed to another network");
+      }
+    }
 
+    function onAccountChange(args: any) {
+      dispatch(actions.setWalletPublicKey(args.accountPublicKey));
+      dispatch(actions.setWatchOnly(args.watchOnly));
+    }
 
-        function onNetworkChange(args: any) {
-            dispatch(actions.setWalletNodeHost(args.networkHost));
-            if (args.networkName === Ledger.Network) {
-                if(!isWalletConnected){
-                    requestWalletConnection()
-                }
-            }
-            else {
-                alert("Wallet changed to another network")
-            }
-        }
+    function onPermissionOrAccountRemoval() {
+      alert("Wallet removed this DApps permission");
+      handleDisconnectWallet();
+    }
 
-        function onAccountChange(args: any) {
-            dispatch(actions.setWalletPublicKey(args.accountPublicKey));
-        }
+    function handleExtensionErrors(e: ExtensionWalletError) {
+      alert(e.message);
+      actions.setWalletError(e);
+    }
 
-        function onPermissionOrAccountRemoval() {
-            alert("Wallet removed this DApps permission")
-            handleDisconnectWallet();
-        }
+    async function handleConnectWallet() {
+      if (isWalletConnected) return;
 
-        function handleExtensionErrors(e: ExtensionWalletError) {
-            alert(e.message)
-            actions.setWalletError(e)
-        }
+      try {
+        const connection = await Wallet.Extension.connect({
+          appName: DAppName,
+          networkName: Ledger.Network,
+        });
 
-        async function handleConnectWallet() {
-            if (isWalletConnected) return;
+        onWalletConnected(connection);
 
-            try {
-                const connection = await Wallet.Extension.connect({
-                    appName: DAppName,
-                    networkName: Ledger.Network,
-                });
+        listener = connection.listen({
+          onNetworkChanged: onNetworkChange,
+          onAccountChanged: onAccountChange,
+          onPermissionRemoved: onPermissionOrAccountRemoval,
+          onAccountRemoved: onPermissionOrAccountRemoval,
+        });
+      } catch (e: any) {
+        handleExtensionErrors(e);
+      }
+    }
 
-                onWalletConnected(connection)
+    window.addEventListener("connect-wallet", handleConnectWallet);
+    window.addEventListener("disconnect-wallet", handleDisconnectWallet);
 
-                listener = connection.listen({
-                    onNetworkChanged: onNetworkChange,
-                    onAccountChanged: onAccountChange,
-                    onPermissionRemoved: onPermissionOrAccountRemoval,
-                    onAccountRemoved: onPermissionOrAccountRemoval,
-                });
-            } catch (e: any) {
-                handleExtensionErrors(e);
-            }
-        }
+    return () => {
+      listener && listener.unlisten();
+      window.removeEventListener("connect-wallet", handleConnectWallet);
+      window.removeEventListener("disconnect-wallet", handleDisconnectWallet);
+    };
+  }, [isWalletConnected, Wallet.Extension]);
 
-        window.addEventListener("connect-wallet", handleConnectWallet);
-        window.addEventListener("disconnect-wallet", handleDisconnectWallet);
-        return () => {
-            listener && listener.unlisten();
-            window.removeEventListener("connect-wallet", handleConnectWallet);
-            window.removeEventListener("disconnect-wallet", handleDisconnectWallet);
-        };
-    }, [isWalletConnected, Wallet.Extension]);
+  useEffect(() => {
+    if (isWalletConnected) return;
+    requestWalletConnection();
+  }, [isWalletConnected]);
 
-    useEffect(() => {
-        if (isWalletConnected) return;
-        requestWalletConnection();
-    }, [isWalletConnected]);
-
-    return null;
+  return null;
 };
